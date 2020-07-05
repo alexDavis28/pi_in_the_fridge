@@ -2,7 +2,8 @@ SENDER_EMAIL = "example@gmail.com"
 SENDER_PASSWORD = "password"
 
 RECIPIENTS = [
-    "example@gmail.com"
+    "example@gmail.com",
+    "example2@gmail.com"
 ]
 
 MAX_TEMP = -5.5
