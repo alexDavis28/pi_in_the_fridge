@@ -5,3 +5,5 @@ RECIPIENTS = [
     "example@gmail.com"
 ]
 
+MAX_TEMP = -5.5
+MIN_TEMP = -40.5

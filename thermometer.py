@@ -23,7 +23,7 @@ from time import sleep
 
 
 def read_temp() -> float:
-    return 22.5
+    return 5
     # lines = read_temp_raw()
     #
     # while lines[0].strip()[-3:] != 'YES':
