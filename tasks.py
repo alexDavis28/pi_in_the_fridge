@@ -99,3 +99,19 @@ def graph():
     """Send an email with a graph of the logs"""
     data.graph(CSV_PATH)
 
+    subject = "Plot of fridge temperature"
+    text = f"Here is a plot of the fridge temperature"
+    recipient = MAIN_RECIPIENT
+    try:
+        mail.send_email_with_image(
+            sender_email=SENDER_EMAIL,
+            password=SENDER_PASSWORD,
+            receiver_email=recipient,
+            subject=subject,
+            body=text,
+            filepath="graph.png"
+        )
+        print(f"Sent graph to: {recipient}")
+    except Exception as e:
+        print(f"Had error:\n{e}\nwhen sending an email.")
+        pass

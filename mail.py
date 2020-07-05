@@ -84,8 +84,11 @@ def send_email_with_image(sender_email: str, password: str, receiver_email: str,
     part_one = MIMEText(text, "plain")
     part_two = MIMEText(html, "html")
 
-    img_data = open(filepath, "rb").read()
-    image = MIMEImage(img_data, name="Graph.png")
+    try:
+        img_data = open(filepath, "rb").read()
+        image = MIMEImage(img_data, name="Graph.png")
+    except FileNotFoundError:
+        print("Image wasn't found")
 
     message.attach(part_one)
     message.attach(part_two)
