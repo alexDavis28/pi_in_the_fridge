@@ -1,7 +1,7 @@
 import thermometer
 from config import *
 import mail
-
+import data
 
 def check():
     """Check if the current temperature of the fridge is within certain bounds. If not, it sends alert emails"""
