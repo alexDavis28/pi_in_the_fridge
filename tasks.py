@@ -98,3 +98,4 @@ def wipe():
 def graph():
     """Send an email with a graph of the logs"""
     data.graph(CSV_PATH)
+
