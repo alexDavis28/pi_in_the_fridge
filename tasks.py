@@ -25,6 +25,7 @@ def check():
             except Exception as e:
                 print(f"Had error:\n{e}\nwhen sending an email.")
                 continue
+            print("\n\n")
         print("Sent alert emails")
 
     elif current_temp <= MIN_TEMP:
