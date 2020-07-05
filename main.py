@@ -17,5 +17,7 @@ if __name__ == '__main__':
         tasks.graph()
     elif behaviour == "test":
         tasks.test()
+    elif behaviour == "ping":
+        tasks.ping()
     else:
         print("Huh, the behaviour wasn't found, sorry")
