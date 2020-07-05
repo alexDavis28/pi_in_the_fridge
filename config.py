@@ -9,3 +9,8 @@ RECIPIENTS = [
 
 MAX_TEMP = -5.5
 MIN_TEMP = -40.5
+
+CSV_PATH = "data.csv"
+
+GRAPH_PATH = "graph.png"
+
