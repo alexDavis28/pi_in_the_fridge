@@ -84,12 +84,6 @@ def log():
 
     now = str(datetime.datetime.now())
 
-    # time = f"{now.hour}{now.minute}"
-    # date = f"{now.day}{now.month}{now.year}"
-    # print(f"Current time is {time}\nCurrent date is {date}")
-    #
-    # current_datetime = time + "\\" + date
-
     print(f"Current datetime is: {now}")
     print(f"Current temp is: {current_temp}")
 
@@ -100,6 +94,7 @@ def wipe():
     """Wipes the csv file"""
     data.wipe_csv(CSV_PATH)
 
+
 def graph():
     """Send an email with a graph of the logs"""
-    pass
+    data.graph(CSV_PATH)
