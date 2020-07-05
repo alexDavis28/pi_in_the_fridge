@@ -109,7 +109,7 @@ def graph():
             receiver_email=recipient,
             subject=subject,
             body=text,
-            filepath="graph.png"
+            filepath=GRAPH_PATH
         )
         print(f"Sent graph to: {recipient}")
     except Exception as e:

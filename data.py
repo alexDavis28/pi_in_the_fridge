@@ -1,5 +1,5 @@
 import pandas as pd
-from config import CSV_PATH
+from config import CSV_PATH, GRAPH_PATH
 import csv
 import matplotlib.pyplot as plt
 
@@ -41,5 +41,5 @@ def graph(filename):
     df = pd.read_csv(filename)
     df.plot(kind="line", x="datetime", y="temperature")
     plt.title("Change in temperature over time")
-    plt.savefig("graph.png")
+    plt.savefig(GRAPH_PATH)
     print("Saved graph")

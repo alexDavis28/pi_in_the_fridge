@@ -3,6 +3,7 @@ import ssl
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.mime.image import MIMEImage
+from config import GRAPH_PATH
 
 def send_email(sender_email: str, password: str, receiver_email: str, subject: str = "Subject", body: str = "Body"):
     print(f"""Email settings:
@@ -86,7 +87,7 @@ def send_email_with_image(sender_email: str, password: str, receiver_email: str,
 
     try:
         img_data = open(filepath, "rb").read()
-        image = MIMEImage(img_data, name="Graph.png")
+        image = MIMEImage(img_data, name=GRAPH_PATH)
     except FileNotFoundError:
         print("Image wasn't found")
 
