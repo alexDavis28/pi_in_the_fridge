@@ -14,7 +14,8 @@ def graph():
 
 
 def test():
-    pass
+    current_temp = t.read_temp()
+    print(f"The current temperature reading is {current_temp}°C.")
 
 
 if __name__ == '__main__':
