@@ -54,6 +54,24 @@ def test():
     print(f"The current temperature reading is {current_temp}°C")
 
 
+def ping():
+    """Checks that the raspi is online by sending an email to the main email adress"""
+    subject = "Fridge update - I'm still here"
+    text = f"Just letting you know that I'm still here, have a nice day!."
+    recipient = MAIN_RECIPIENT
+    try:
+        mail.send_email(
+            sender_email=SENDER_EMAIL,
+            password=SENDER_PASSWORD,
+            receiver_email=recipient,
+            subject=subject,
+            body=text
+        )
+        print(f"Sent alert email to: {recipient}")
+    except Exception as e:
+        print(f"Had error:\n{e}\nwhen sending an email.")
+        pass
+
 def log():
     """Log the current temperature"""
     pass

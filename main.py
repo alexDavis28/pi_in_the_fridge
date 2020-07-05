@@ -4,7 +4,7 @@ import tasks
 if __name__ == '__main__':
     try:
         behaviour = sys.argv[1]
-        if behaviour not in ["check", "log", "graph", "test"]:
+        if behaviour not in ["check", "log", "graph", "test", "ping"]:
             raise IndexError
     except IndexError:
         behaviour = "test"
