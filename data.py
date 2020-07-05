@@ -10,3 +10,7 @@ def init_csv(filename):
     }
     df = pd.DataFrame(data)
     df.to_csv(filename)
+    print("Created csv")
+
+
+init_csv("data.csv")
