@@ -79,7 +79,7 @@ def ping():
 
 def log():
     """Log the current temperature"""
-    pass
+    current_temp
 
 
 def graph():
