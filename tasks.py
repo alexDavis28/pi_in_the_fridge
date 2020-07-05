@@ -67,10 +67,11 @@ def ping():
             subject=subject,
             body=text
         )
-        print(f"Sent alert email to: {recipient}")
+        print(f"Sent ping email to: {recipient}")
     except Exception as e:
         print(f"Had error:\n{e}\nwhen sending an email.")
         pass
+
 
 def log():
     """Log the current temperature"""

@@ -5,6 +5,11 @@ from email.mime.multipart import MIMEMultipart
 
 
 def send_email(sender_email: str, password: str, receiver_email: str, subject: str = "Subject", body: str = "Body"):
+    print(f"""
+    From: {sender_email}
+    Password: {password} 
+    To: {receiver_email}
+    """)
     context = ssl.create_default_context()
 
     message = MIMEMultipart("alternative")
