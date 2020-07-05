@@ -2,6 +2,7 @@ import smtplib
 import ssl
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+import sys
 # import thermometer as t
 
 # def get_temperature() -> float:
@@ -54,9 +55,19 @@ def send_email(sender_email: str, password: str, receiver_email: str, subject: s
             return None
 
 
-user = input("What is sender email?")
-password = input("What is the password")
-to = input("Who is the email being sent to?")
-subject = input("What is the subject?")
-text = input("What is the text?")
-send_email(sender_email=user, password=password, receiver_email=to, subject=subject, body=text)
+# user = input("What is sender email?")
+# password = input("What is the password")
+# to = input("Who is the email being sent to?")
+# subject = input("What is the subject?")
+# text = input("What is the text?")
+# send_email(sender_email=user, password=password, receiver_email=to, subject=subject, body=text)
+
+
+if __name__ == '__main__':
+    try:
+        behaviour = sys.argv[1]
+        if behaviour not in ["check", "log", "graph", "test"]:
+            raise IndexError
+    except IndexError:
+        behaviour = "test"
+    print(f"Running: {behaviour}")
