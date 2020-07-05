@@ -22,7 +22,7 @@ from time import sleep
 #     return lines
 
 
-def read_temp():
+def read_temp() -> float:
     return 22.5
     # lines = read_temp_raw()
     #
