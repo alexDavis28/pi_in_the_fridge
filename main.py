@@ -4,7 +4,7 @@ import tasks
 if __name__ == '__main__':
     try:
         behaviour = sys.argv[1]
-        if behaviour not in ["check", "log", "graph", "test", "ping"]:
+        if behaviour not in ["check", "log", "graph", "test", "ping", "wipe"]:
             raise IndexError
     except IndexError:
         behaviour = "test"
@@ -19,5 +19,7 @@ if __name__ == '__main__':
         tasks.test()
     elif behaviour == "ping":
         tasks.ping()
+    elif behaviour == "wipe":
+        tasks.wipe()
     else:
         print("Huh, the behaviour wasn't found, sorry")

@@ -96,6 +96,10 @@ def log():
     data.append_data(now, current_temp)
 
 
+def wipe():
+    """Wipes the csv file"""
+    data.wipe_csv()
+
 def graph():
     """Send an email with a graph of the logs"""
     pass
