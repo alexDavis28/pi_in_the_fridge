@@ -46,6 +46,8 @@ def check():
                 print(f"Had error:\n{e}\nwhen sending an email.")
                 continue
         print("Sent alert emails")
+    else:
+        print("Fridge temperature is within safe levels.")
 
 
 def test():
