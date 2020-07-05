@@ -2,6 +2,7 @@ import thermometer
 from config import *
 import mail
 import data
+import datetime
 
 def check():
     """Check if the current temperature of the fridge is within certain bounds. If not, it sends alert emails"""
@@ -79,7 +80,20 @@ def ping():
 
 def log():
     """Log the current temperature"""
-    current_temp
+    current_temp = thermometer.read_temp()
+
+    now = str(datetime.datetime.now())
+
+    # time = f"{now.hour}{now.minute}"
+    # date = f"{now.day}{now.month}{now.year}"
+    # print(f"Current time is {time}\nCurrent date is {date}")
+    #
+    # current_datetime = time + "\\" + date
+
+    print(f"Current datetime is: {now}")
+    print(f"Current temp is: {current_temp}")
+
+    data.append_data(now, current_temp)
 
 
 def graph():

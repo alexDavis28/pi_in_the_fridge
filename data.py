@@ -1,6 +1,5 @@
 import datetime as dt
 import pandas as pd
-import matplotlib
 from config import CSV_PATH
 
 
