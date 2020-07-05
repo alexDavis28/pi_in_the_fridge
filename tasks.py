@@ -98,7 +98,7 @@ def log():
 
 def wipe():
     """Wipes the csv file"""
-    data.wipe_csv()
+    data.wipe_csv(CSV_PATH)
 
 def graph():
     """Send an email with a graph of the logs"""
