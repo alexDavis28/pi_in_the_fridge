@@ -1,23 +1,5 @@
 import sys
-import thermometer as t
-
-
-def check():
-    pass
-
-
-def log():
-    pass
-
-
-def graph():
-    pass
-
-
-def test():
-    current_temp = t.read_temp()
-    print(f"The current temperature reading is {current_temp}°C")
-
+import tasks
 
 if __name__ == '__main__':
     try:
@@ -28,12 +10,12 @@ if __name__ == '__main__':
         behaviour = "test"
 
     if behaviour == "check":
-        check()
+        tasks.check()
     elif behaviour == "log":
-        log()
+        tasks.log()
     elif behaviour == "graph":
-        graph()
+        tasks.graph()
     elif behaviour == "test":
-        test()
+        tasks.test()
     else:
         print("Huh, the behaviour wasn't found, sorry")
