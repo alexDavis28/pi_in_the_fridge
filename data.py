@@ -3,6 +3,7 @@ from config import CSV_PATH
 import csv
 import matplotlib.pyplot as plt
 
+
 def init_csv(filename):
     data = {
         "datetime": [],
@@ -37,19 +38,8 @@ def wipe_csv(filename):
 
 
 def graph(filename):
-
-    x = []
-    y = []
-
-    with open(filename, 'r') as file:
-        plots = csv.reader(file, delimiter=",")
-        for row in plots:
-            x.append(row[0])
-            y.append(float(row[1]))
-
-    plt.plot(x, y)
-    plt.xlabel("x")
-    plt.ylabel("y")
+    df = pd.read_csv(filename)
+    df.plot(kind="line", x="datetime", y="temperature")
     plt.title("Change in temperature over time")
-    plt.legend()
-    plt.show()
+    plt.savefig("graph.png")
+    print("Saved graph")
