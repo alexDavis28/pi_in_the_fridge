@@ -23,7 +23,7 @@ from time import sleep
 
 
 def read_temp() -> float:
-    return float(input("Enter fridge temp"))
+    return float(input("Enter fridge temp: "))
     # lines = read_temp_raw()
     #
     # while lines[0].strip()[-3:] != 'YES':
