@@ -59,10 +59,11 @@ def test():
     print(f"The current temperature reading is {current_temp}°C")
 
 
-def ping():
+def ping(text: str = None):
     """Checks that the raspi is online by sending an email to the main email adress"""
-    subject = "Fridge update - I'm still here"
-    text = f"Just letting you know that I'm still here, have a nice day!."
+    subject = "Fridge update"
+    if text is None:
+        text = f"Just letting you know that I'm still here, have a nice day!."
     recipient = MAIN_RECIPIENT
     try:
         mail.send_email(

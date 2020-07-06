@@ -18,7 +18,10 @@ if __name__ == '__main__':
     elif behaviour == "test":
         tasks.test()
     elif behaviour == "ping":
-        tasks.ping()
+        try:
+            tasks.ping(sys.argv[2])
+        except IndexError:
+            tasks.ping()
     elif behaviour == "wipe":
         tasks.wipe()
     else:
