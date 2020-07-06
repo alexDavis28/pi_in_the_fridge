@@ -15,7 +15,7 @@ try:
             print(f"Had error:\n\n{e}")
 except Exception as e:
     print(e)
-    print("Using default function")
+    print("Using default read_temp function")
 
     def read_temp() -> float:
         try:
