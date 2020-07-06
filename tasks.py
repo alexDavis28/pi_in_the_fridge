@@ -4,6 +4,7 @@ import mail
 import data
 import datetime
 
+
 def check():
     """Check if the current temperature of the fridge is within certain bounds. If not, it sends alert emails"""
     current_temp = thermometer.read_temp()
