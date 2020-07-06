@@ -1,3 +1,27 @@
+import mail
+from config import *
+
+
+def alert(text: str = None):
+    if text is None:
+        text = "ERROR"
+
+    subject = "FRIDGE SENSOR ERROR"
+    recipient = MAIN_RECIPIENT
+    try:
+        mail.send_email(
+            sender_email=SENDER_EMAIL,
+            password=SENDER_PASSWORD,
+            receiver_email=recipient,
+            subject=subject,
+            body=text
+        )
+        print(f"Sent error email to: {recipient}")
+    except Exception as e:
+        print(f"Had error:\n{e}\nwhen sending an email.")
+        pass
+
+
 try:
     from w1thermsensor import W1ThermSensor, errors
 
@@ -7,12 +31,19 @@ try:
             sensor = W1ThermSensor()
             temperature = float(sensor.get_temperature())
             return temperature
+
         except errors.NoSensorFoundError as e:
             print(f"No sensor was found\n\n{e}")
+            alert(f"No sensor was found\n\n{e}")
+
         except errors.SensorNotReadyError as e:
-            print(f"Sensor is not ready yet")
+            print(f"Sensor is not ready yet\n\n {e}")
+            alert(f"Sensor is not ready yet\n\n {e}")
+
         except Exception as e:
             print(f"Had error:\n\n{e}")
+            alert(f"Had error:\n\n{e}")
+
 except Exception as e:
     print(e)
     print("Using default read_temp function")
@@ -23,6 +54,7 @@ except Exception as e:
             return temperature
         except ValueError:
             print("That is not a valid number")
+    alert(f"The fridge sensor script had the following error when initialising thermometer.py:\n{e}")
 
 
 # The below code is kept for reference
