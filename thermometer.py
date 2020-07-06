@@ -1,17 +1,28 @@
-from w1thermsensor import W1ThermSensor, errors
+try:
+    from w1thermsensor import W1ThermSensor, errors
 
 
-def read_temp() -> float:
-    try:
-        sensor = W1ThermSensor()
-        temperature = float(sensor.get_temperature())
-        return temperature
-    except errors.NoSensorFoundError as e:
-        print(f"No sensor was found\n\n{e}")
-    except errors.SensorNotReadyError as e:
-        print(f"Sensor is not ready yet")
-    except Exception as e:
-        print(f"Had error:\n\n{e}")
+    def read_temp() -> float:
+        try:
+            sensor = W1ThermSensor()
+            temperature = float(sensor.get_temperature())
+            return temperature
+        except errors.NoSensorFoundError as e:
+            print(f"No sensor was found\n\n{e}")
+        except errors.SensorNotReadyError as e:
+            print(f"Sensor is not ready yet")
+        except Exception as e:
+            print(f"Had error:\n\n{e}")
+except Exception as e:
+    print(e)
+    print("Using default function")
+
+    def read_temp() -> float:
+        try:
+            temperature = float(input("Enter fridge temp: "))
+            return temperature
+        except ValueError:
+            print("That is not a valid number")
 
 
 # The below code is kept for reference
