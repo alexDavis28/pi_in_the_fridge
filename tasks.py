@@ -82,11 +82,13 @@ def ping(text: str = None):
 
 def log():
     """Log the current temperature"""
+
     current_temp = thermometer.read_temp()
 
-    now = str(datetime.datetime.now())
+    now = '{0:%a-%d-%b-%H:%M}'.format(datetime.datetime.now())
 
     print(f"Current datetime is: {now}")
+
     print(f"Current temp is: {current_temp}")
 
     data.append_data(now, current_temp)

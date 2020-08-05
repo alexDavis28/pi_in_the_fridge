@@ -39,7 +39,13 @@ def wipe_csv(filename):
 
 def graph(filename):
     df = pd.read_csv(filename)
+
     df.plot(kind="line", x="datetime", y="temperature")
-    plt.title("Change in temperature over time")
+
+    plt.xticks(rotation=90)
+
+    plt.title("Temperature")
+
     plt.savefig(GRAPH_PATH)
+
     print("Saved graph")
